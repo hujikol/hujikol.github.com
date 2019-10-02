@@ -4,7 +4,7 @@
         <title>Nicholas Nanda</title>
         <meta charset="utf-8">
         <style>
-            @keyframes topFadeOut{
+            @keyframes topFadeIn{
                 0% {
                     position: absolute;
                     top: 5%;
@@ -16,7 +16,8 @@
                     opacity: 1;
                 }
             }
-            @keyframes rightFadeInOut{
+
+            @keyframes leftFadeIn{
                 0% {
                     position: absolute;
                     left: 40px;
@@ -27,12 +28,35 @@
                     left: 70px;
                 }
             }
+            
+            @keyframes rightFadeIn{
+                0% {
+                    position: absolute;
+                    right: 40px;
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    right: 70px;
+                }
+            }
+            
+            @keyframes FadeIn{
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
             body{
-                background-color: #333533;
+                background-color: #242423;
                 font-family: Roboto, stack-sans, sans-serif;
                 backface-visibility: hidden;
                 color: #CFDBD5;
-            }         
+            }  
+
             h1#intro-tag{
                 position: fixed;
                 right: 60px;
@@ -40,46 +64,107 @@
                 font-family: arial;
                 text-align: right;
                 font-weight: 200;
-                animation-name: topFadeOut;
+                animation-name: topFadeIn;
                 animation-duration: 2s;
             }
+
             div#social-media{
                 position: absolute;
                 left: 70px;
                 bottom: 8%;
                 font-size: 14px;
                 font-family: "Roboto Mono", stack-mono, monospace;
-                animation-name: rightFadeInOut;
+                animation-name: leftFadeIn;
+                animation-duration: 2.4s;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
+            }
+
+            #button-con{
+                position: absolute;
+                font-size: 18;
+                right: 70px;
+                bottom: 8%;
+                animation-name: rightFadeIn;
                 animation-duration: 2s;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
                 
             }
+            
+            #deco-con{
+                position: absolute;
+                font-size: 18;
+                left: 70px;
+                top: 14%;
+                animation-name: leftFadeIn;
+                animation-duration: 2s;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
+                
+            }
+
+            #rotate-con{
+                color: #F5CB5C;
+                
+                -webkit-transform: rotate(270deg) translate(250px, -642px);
+                font-family: "Roboto Mono", stack-mono, monospace;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
+                font-size: 14px;
+                animation-name: FadeIn;
+                animation-duration: 3s;
+            }
+
             a#intro-nama:link, a#intro-nama:visited, a#intro-nama:active
             {
                 color: #F5CB5C;
                 text-decoration: none;
                 border-bottom: 1px dotted;
             }
+
             a#intro-nama:hover{
-                color: #E8EDDF;
+                color: #D7E1DC;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
+                border-bottom: 0px dotted;
+                font-size: 33px;
             }
-            a.social-media:link, a.social-media:visited, a.social-media:active
+
+            a.social-media:link, a.social-media:visited, a.social-media:active, #home-button:link, #home-button:visited, #home-button:active
             {
                 color: #CFDBD5;
                 text-decoration: none;
             }
-            a.social-media:hover{
+
+            a.social-media:hover, #home-button:hover{
                 color: #F5CB5C;
+                text-shadow: none;
             }
         </style>
     </head>
     <body>
+
+        <div id="button-con">
+            <a target="blank" id="home-button" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=nikolasnanda@gmail.com"><i>O</i></a>
+        </div>
+        <div id="deco-con">
+            <i>O</i>
+        </div>
+
+        <div id="rotate-con">
+            <p>Made in (With Love) 2019</p>
+        </div>
+
         <h1 id="intro-tag">Halo, namaku <a id="intro-nama" href="profile.html">Nicholas Nanda Sulakana</a>,
             <br>mahasiswa Informatika di salah satu
             <br>Universitas Kota Yogyakarta</h1>
+
         <div id="social-media">
             <a class="social-media" target="_blank" href="https://github.com/hujikol">Github</a><br><br>
             <a class="social-media" target="_blank" href="https://www.instagram.com/nicholas_nanda">Instagram</a><br><br>
             <a class="social-media" target="_blank" href="https://wa.me/6281332187818?text=%22Pesan%20ini%20dibuat%20dari%20web%20portofolio%22">WhatsApp</a><br><br>
         </div>
+
     </body>
 </html>
