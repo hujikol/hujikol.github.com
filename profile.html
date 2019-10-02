@@ -4,7 +4,7 @@
         <title>Nicholas Nanda</title>
         <meta charset="utf-8">
         <style>
-            @keyframes rightFadeInOut{
+            @keyframes leftFadeIn{
                 0% {
                     position: absolute;
                     left: 40px;
@@ -15,37 +15,179 @@
                     left: 70px;
                 }
             }
+
+            @keyframes rightFadeIn{
+                0% {
+                    position: absolute;
+                    right: 40px;
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                    right: 90px;
+                }
+            }
+
+            @keyframes FadeIn{
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    opacity: 1;
+                }
+            }
+
+            .riwayat{
+                position: absolute;
+                top: 120%;
+            }
+
             body{
-                background-color: #333533;
+                background-image: url("profile-picture.png");
+                background-repeat: no-repeat;
+                background-attachment: absolute;
+                background-position: 750px 150px;
+                background-color: #242423;
                 font-family: Roboto, stack-sans, sans-serif;
                 backface-visibility: hidden;
                 color: #CFDBD5;
-            }         
-            div#social-media{
+            }
+
+            .info{
                 position: absolute;
+                text-align: right;
+                color: #242423;
+                right: 500px;
+                top: 290px;
+                animation-name: FadeIn;
+                animation-duration: 2s;
+            }
+
+            .tooltip: hover{
+                line-height: 9em;
+            }
+
+            .tooltip: before{
+                content: attr(data-text);
+                color: #DEEFF5;
+                position: absolute;
+                top: -2.65em;
+            }
+
+            div#social-media{
+                position: fixed;
                 left: 70px;
                 bottom: 8%;
                 font-size: 14px;
                 font-family: "Roboto Mono", stack-mono, monospace;
-                animation-name: rightFadeInOut;
-                animation-duration: 2s;
-                
+                animation-name: leftFadeIn;
+                animation-duration: 2.4s;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
             }
-            a.social-media:link, a.social-media:visited, a.social-media:active
+
+            #deco-con{
+                position: fixed;
+                font-size: 18;
+                left: 70px;
+                top: 14%;
+                animation-name: leftFadeIn;
+                animation-duration: 2s;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
+
+            }
+
+            #home-button-con{
+                position: fixed;
+                font-size: 18;
+                right: 90px;
+                top: 12%;
+                animation-name: rightFadeIn;
+                animation-duration: 2s;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
+            }
+
+            #button-con{
+                position: fixed;
+                font-size: 18;
+                right: 90px;
+                bottom: 8%;
+                animation-name: rightFadeIn;
+                animation-duration: 4s;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
+            }
+            
+            #rotate-con{
+                position: sticky;
+            }
+            
+            #rotate{
+                color: #F5CB5C;
+                -webkit-transform: rotate(270deg) translate(250px, -645px);
+                font-family: "Roboto Mono", stack-mono, monospace;
+                text-shadow:    rgba(10, 189, 240, 0.298039) 3px 3px 0px, 
+                    rgba(254, 1, 1, 0.298039) -3px -3px 0px;
+                font-size: 14px;
+                animation-name: FadeIn;
+                animation-duration: 3s;
+            }
+
+            a.social-media:link, a.social-media:visited, a.social-media:active, #button:link, #button:visited, #button:active
             {
                 color: #CFDBD5;
                 text-decoration: none;
             }
-            a.social-media:hover{
+
+            a.social-media:hover, #button:hover{
                 color: #F5CB5C;
             }
+
         </style>
     </head>
     <body>
+        <div class="content">
+            <div class="info">
+                <mark style="background-color: #F6DA90">Halo, namaku Nicholas Nanda Sulaksana,<br>
+                    mahasiswa Informatikadi UPN "Veteran" Yogyakarta.<br>
+                    Lahir dan tinggal di Yogyakarta,<br>
+                    yang sekarang masih belajar<br>
+                    pemrograman, design, dan juga photography.</mark>
+            </div>
+            <div class="riwayat">
+                <h3></h3>
+                <p data-text="2018 - 2019" class="tooltip-hover">uon veteran yogyakarta</p>
+                <p data-text="2018 - 2019" class="tooltip-hover">uon veteran yogyakarta</p>
+                <p data-text="2018 - 2019" class="tooltip-hover">uon veteran yogyakarta</p>
+                <p data-text="2018 - 2019" class="tooltip-hover">uon veteran yogyakarta</p>
+            </div>
+        </div>
+        <div id="deco-con">
+            <i>O</i>
+        </div>
+        <div id="home-button-con">
+            <a id="button" href="index.html"><i>O</i></a>
+        </div>
+        <div id="button-con">
+            <a target="blank" id="button" href="https://mail.google.com/mail/u/0/?view=cm&fs=1&tf=1&to=nikolasnanda@gmail.com"><i>O</i></a>
+        </div>
+
+
+        <div id="rotate-con">
+            <p id="rotate">Made in (With Love) 2019</p>
+        </div>
+
+        <div id="content-con">
+
+        </div>
+
         <div id="social-media">
             <a class="social-media" target="_blank" href="https://github.com/hujikol">Github</a><br><br>
             <a class="social-media" target="_blank" href="https://www.instagram.com/nicholas_nanda">Instagram</a><br><br>
             <a class="social-media" target="_blank" href="https://wa.me/6281332187818?text=%22Pesan%20ini%20dibuat%20dari%20web%20portofolio%22">WhatsApp</a><br><br>
         </div>
+
     </body>
 </html>
